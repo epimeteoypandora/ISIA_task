@@ -46,7 +46,15 @@ public class Matriz {
             } 
         } 
         return matrizResultante; 
-    } 
+    }
+
+    public void multiplicarMatriz(double n, Matriz a) {
+        int i, j, dimensionA;
+        dimensionA=a.getDimension().height;
+        for(i=0;i<dimensionA;i++)
+            for(j=0;j<dimensionA;j++)
+                a.datos[i][j]*=n;
+    }
 
 public static Matriz matrizTranspuesta(Matriz matriz){
     
@@ -57,7 +65,7 @@ public static Matriz matrizTranspuesta(Matriz matriz){
             nuevam.datos[i][j]=matriz.datos[j][i];
     }
     return nuevam;
-}    
+}        
     
     @Override
     public String toString(){
